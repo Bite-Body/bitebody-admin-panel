@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactJson from 'react-json-view'
 import '../static/css/Admin.css'
 
 class Admin extends Component {
@@ -7,12 +8,14 @@ class Admin extends Component {
       this.state = {
         httpMethod: '',
         entity: '',
-        payload: {}
+        payload: {},
+        result: {}
       };
 
       this.handleChange = this.handleChange.bind(this);
       this.handlePayload = this.handlePayload.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.postUser = this.postUser.bind(this);
     }
   
     handleChange(event) {
@@ -33,14 +36,149 @@ class Admin extends Component {
     }
   
     handleSubmit(event) {
-      console.log('A name was submitted: ' + this.state.value);
+      if(this.state.entity === 'users'){
+        if(this.state.httpMethod === 'POST'){
+          this.postUser(this.state.payload)
+        }
+        if(this.state.httpMethod === 'GET'){
+          this.getUser(this.state.payload)
+        }
+        if(this.state.httpMethod === 'PUT'){
+          this.updateUser(this.state.payload)
+        }
+      }
       event.preventDefault();
-      console.log(this.state)
+    }
+
+    postUser(payload){
+      fetch('https://gentle-inlet-25364.herokuapp.com/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      })
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({result: result})
+        console.log('Success:', result);
+        console.log(this.state)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    getUser(payload){
+      const base = "https://gentle-inlet-25364.herokuapp.com/users/"
+      const endpoint = base.concat(payload['userid'])
+      fetch(endpoint, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({result: result})
+        console.log('Success:', result);
+        console.log(this.state)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    updateUser(payload){
+      const base = "https://gentle-inlet-25364.herokuapp.com/users/"
+      const endpoint = base.concat(payload['userid'])
+      fetch(endpoint, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      })
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({result: result})
+        console.log('Success:', result);
+        console.log(this.state)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     }
   
     render() {
-      const createUser = (
+      const CreateUser = (
         <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const UpdateUser = (
+        <>
+        <br/>
+          <div className="form-group">
+              <label htmlFor="name">User ID</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="userid"
+                  placeholder="Enter the ID you want to update"
+                  value={this.state.userid}
+                  onChange={this.handlePayload}
+                  />
+            </div>
 
           <div className="form-group">
             <label htmlFor="name">First name</label>
@@ -93,6 +231,30 @@ class Admin extends Component {
         </>
       )
 
+      const ReadAndDeleteUser = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="userid"
+                placeholder="User ID"
+                value={this.state.userid}
+                onChange={this.handlePayload}
+                />
+          </div>
+        </>
+      )
+
+      const result = (
+        <>
+          <hr/>
+          <ReactJson src={this.state.result} theme="shapeshifter:inverted" />
+        </>
+      )
+
       return (
         <div className="container crud">
 
@@ -124,7 +286,9 @@ class Admin extends Component {
 
                     <div className="row">
                       <div className="col-md-12">
-                        {this.state.httpMethod === "POST" ? (this.state.entity === "users" ? createUser : null) : null}
+                        {(this.state.httpMethod === "POST") ? (this.state.entity === "users" ? CreateUser : null) : null}
+                        {(this.state.httpMethod === "PUT") ? (this.state.entity === "users" ? UpdateUser : null) : null}
+                        {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "users" ? ReadAndDeleteUser : null) : null}
                       </div>
                     </div>
 
@@ -133,6 +297,8 @@ class Admin extends Component {
                     </center>
 
                 </form>
+
+                {Object.keys(this.state.result).length !== 0 ? result : null}
             
         </div>
       );
