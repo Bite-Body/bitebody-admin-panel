@@ -31,7 +31,7 @@ npm -version
 
 1. Change directory (cd) into the project folder.
 ```
-cd bitebody-front-end
+cd bitebody-admin-panel
 ```
 2. Install Node.js dependencies. 
 ```
