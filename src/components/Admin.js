@@ -37,15 +37,10 @@ class Admin extends Component {
   
     handleSubmit(event) {
       if(this.state.entity === 'users'){
-        if(this.state.httpMethod === 'POST'){
-          this.postUser(this.state.payload)
-        }
-        if(this.state.httpMethod === 'GET'){
-          this.getUser(this.state.payload)
-        }
-        if(this.state.httpMethod === 'PUT'){
-          this.updateUser(this.state.payload)
-        }
+        if(this.state.httpMethod === 'POST'){this.postUser(this.state.payload)}
+        if(this.state.httpMethod === 'GET'){this.getUser(this.state.payload)}
+        if(this.state.httpMethod === 'PUT'){this.updateUser(this.state.payload)}
+        if(this.state.httpMethod === 'DELETE'){this.deleteUser(this.state.payload)}
       }
       event.preventDefault();
     }
@@ -98,6 +93,26 @@ class Admin extends Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload)
+      })
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({result: result})
+        console.log('Success:', result);
+        console.log(this.state)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    deleteUser(payload){
+      const base = "https://gentle-inlet-25364.herokuapp.com/users/"
+      const endpoint = base.concat(payload['userid'])
+      fetch(endpoint, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        }
       })
       .then((response) => response.json())
       .then((result) => {
