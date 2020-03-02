@@ -248,6 +248,554 @@ class Admin extends Component {
         </>
       )
 
+      const CreateWorkout = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const UpdateWorkout = (
+        <>
+        <br/>
+          <div className="form-group">
+              <label htmlFor="name">User ID</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="userid"
+                  placeholder="Enter the ID you want to update"
+                  value={this.state.userid}
+                  onChange={this.handlePayload}
+                  />
+            </div>
+
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const ReadAndDeleteWorkout = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">Workout ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="wkoutID"
+                placeholder="Workout ID"
+                value={this.state.wkoutID}
+                onChange={this.handlePayload}
+                />
+          </div>
+        </>
+      )
+
+      const CreateYTVideo = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const UpdateYTVideo = (
+        <>
+        <br/>
+          <div className="form-group">
+              <label htmlFor="name">User ID</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="userid"
+                  placeholder="Enter the ID you want to update"
+                  value={this.state.userid}
+                  onChange={this.handlePayload}
+                  />
+            </div>
+
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const ReadAndDeleteYTVideo = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="userid"
+                placeholder="User ID"
+                value={this.state.userid}
+                onChange={this.handlePayload}
+                />
+          </div>
+        </>
+      )
+
+      const CreateCollab = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const UpdateCollab = (
+        <>
+        <br/>
+          <div className="form-group">
+              <label htmlFor="name">User ID</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="userid"
+                  placeholder="Enter the ID you want to update"
+                  value={this.state.userid}
+                  onChange={this.handlePayload}
+                  />
+            </div>
+
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const ReadAndDeleteCollab = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="userid"
+                placeholder="User ID"
+                value={this.state.userid}
+                onChange={this.handlePayload}
+                />
+          </div>
+        </>
+      )
+
+      const CreateMeal = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const UpdateMeal = (
+        <>
+        <br/>
+          <div className="form-group">
+              <label htmlFor="name">User ID</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="userid"
+                  placeholder="Enter the ID you want to update"
+                  value={this.state.userid}
+                  onChange={this.handlePayload}
+                  />
+            </div>
+
+          <div className="form-group">
+            <label htmlFor="name">First name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="first_name"
+                placeholder="Enter your first name"
+                value={this.state.first_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Last name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="last_name"
+                placeholder="Enter your last name"
+                value={this.state.last_name}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+        </>
+      )
+
+      const ReadAndDeleteMeal = (
+        <>
+        <br/>
+          <div className="form-group">
+            <label htmlFor="name">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                name="userid"
+                placeholder="User ID"
+                value={this.state.userid}
+                onChange={this.handlePayload}
+                />
+          </div>
+        </>
+      )
+
       const result = (
         <>
           <hr/>
@@ -277,7 +825,7 @@ class Admin extends Component {
                             <option value="">Choose Entity</option>
                             <option value="users">User</option>
                             <option value="workouts">Workout</option>
-                            <option value="youtube_Videos">Youtube_Video</option>
+                            <option value="youtube_videos">Youtube_Video</option>
                             <option value="collabs">Collaborator</option>
                             <option value="meals">Meal</option>
                         </select>
@@ -289,6 +837,24 @@ class Admin extends Component {
                         {(this.state.httpMethod === "POST") ? (this.state.entity === "users" ? CreateUser : null) : null}
                         {(this.state.httpMethod === "PUT") ? (this.state.entity === "users" ? UpdateUser : null) : null}
                         {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "users" ? ReadAndDeleteUser : null) : null}
+                      
+                        {(this.state.httpMethod === "POST") ? (this.state.entity === "workouts" ? CreateWorkout : null) : null}
+                        {(this.state.httpMethod === "PUT") ? (this.state.entity === "workouts" ? UpdateWorkout : null) : null}
+                        {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "workouts" ? ReadAndDeleteWorkout : null) : null}
+
+                        {(this.state.httpMethod === "POST") ? (this.state.entity === "youtube_videos" ? CreateYTVideo : null) : null}
+                        {(this.state.httpMethod === "PUT") ? (this.state.entity === "youtube_videos" ? UpdateYTVideo : null) : null}
+                        {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "youtube_videos" ? ReadAndDeleteYTVideo : null) : null}
+
+                        {(this.state.httpMethod === "POST") ? (this.state.entity === "collabs" ? CreateCollab : null) : null}
+                        {(this.state.httpMethod === "PUT") ? (this.state.entity === "collabs" ? UpdateCollab : null) : null}
+                        {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "collabs" ? ReadAndDeleteCollab : null) : null}
+
+                        {(this.state.httpMethod === "POST") ? (this.state.entity === "meals" ? CreateMeal : null) : null}
+                        {(this.state.httpMethod === "PUT") ? (this.state.entity === "meals" ? UpdateMeal : null) : null}
+                        {(this.state.httpMethod === "GET" || this.state.httpMethod === "DELETE") ? (this.state.entity === "meals" ? ReadAndDeleteMeal : null) : null}
+
+
                       </div>
                     </div>
 
