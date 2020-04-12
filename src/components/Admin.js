@@ -130,6 +130,18 @@ class Admin extends Component {
         <>
         <br/>
           <div className="form-group">
+            <label htmlFor="name">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                name="username"
+                placeholder="Enter your username"
+                value={this.state.username}
+                onChange={this.handlePayload}
+                />
+          </div>
+
+          <div className="form-group">
             <label htmlFor="name">First name</label>
               <input
                 type="text"
@@ -194,6 +206,18 @@ class Admin extends Component {
                   onChange={this.handlePayload}
                   />
             </div>
+
+          <div className="form-group">
+            <label htmlFor="name">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                name="username"
+                placeholder="Enter your username"
+                value={this.state.username}
+                onChange={this.handlePayload}
+                />
+          </div>
 
           <div className="form-group">
             <label htmlFor="name">First name</label>
